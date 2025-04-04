@@ -9,21 +9,7 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-      .glass {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      }
-      body {
-        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-        min-height: 100vh;
-      }
-      .text-dark-green {
-        color: #075e54;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/style.css">
   </head>
   <body
     class="flex flex-col items-center justify-between p-4 md:p-12 font-sans text-gray-800"
@@ -160,63 +146,6 @@
       </p>
     </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
-
-        const phoneMask = (value) => {
-          value = value.replace(/\D/g, "");
-          value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
-          value = value.replace(/(\d)(\d{4})$/, "$1-$2");
-          return value;
-        };
-
-        const phoneInput = document.getElementById("phone");
-        phoneInput.addEventListener("input", (e) => {
-          e.target.value = phoneMask(e.target.value);
-        });
-
-        const whatsappForm = document.getElementById("whatsapp-form");
-        const resultDiv = document.getElementById("result");
-        const generatedLinkInput = document.getElementById("generated-link");
-        const openLinkBtn = document.getElementById("open-link");
-        const copyBtn = document.getElementById("copy-btn");
-        const copyMessage = document.getElementById("copy-message");
-
-        whatsappForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-
-          let phone = phoneInput.value.replace(/\D/g, "");
-
-          if (phone.length === 11 || phone.length === 10) {
-            phone = "55" + phone;
-          }
-
-          const message = encodeURIComponent(
-            document.getElementById("message").value
-          );
-
-          const whatsappLink = `https://wa.me/${phone}${
-            message ? "?text=" + message : ""
-          }`;
-
-          generatedLinkInput.value = whatsappLink;
-          openLinkBtn.href = whatsappLink;
-          resultDiv.classList.remove("hidden");
-          copyBtn.disabled = false;
-        });
-
-        // Copiar
-        copyBtn.addEventListener("click", () => {
-          generatedLinkInput.select();
-          document.execCommand("copy");
-
-          copyMessage.classList.remove("hidden");
-          setTimeout(() => {
-            copyMessage.classList.add("hidden");
-          }, 3000);
-        });
-      });
-    </script>
+    <script src="./assets/index.js"></script>
   </body>
 </html>

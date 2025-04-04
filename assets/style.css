@@ -1,0 +1,13 @@
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+body {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  min-height: 100vh;
+}
+.text-dark-green {
+  color: #075e54;
+}
