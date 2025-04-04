@@ -31,6 +31,3 @@ Este projeto utiliza tecnologias web básicas:
 
 ## Contribuições
 Contribuições, sugestões e feedback são bem-vindos. Fique à vontade para abrir uma issue ou enviar um pull request.
-
-## Licença
-[Informações sobre licença serão adicionadas]
